@@ -4,7 +4,7 @@
 The main idea behind Fpool is directly map method to event name , when you add an object to Fpool , its method name will match event name.
 When you send an event , Fpool will look at all the object having the same method name and call it.
 The plan is also to add web workers support in the futur.
-I don't know if such a framework as this one would be any usefull as you can't target a specific object.This is just a first shot.
+I don't know if such a framework as this one would be any usefull as you can't target a specific object.This is just a first shot idea because why not defining everything in its own object and just throw it up to the pool
 
 ## About inheritance
 Fpool doesnt watch for higher level of method definition currently.
