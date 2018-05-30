@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="Fpool.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript" data-comment="A first talking object">
+    var firstObj={
+      datas:[],
+      fp:null,
+      todoAddNewData:function () {
+
+      },
+      todoDeleteData:function () {
+
+      },
+      methodOnBothObjects:function () {
+        console.log("First object","methodOnBothObjects");
+      }
+    }
+    </script>
+    <script type="text/javascript" data-comment="A first talking object">
+      function secondObjConstructor(fp){
+        this.otherDatas=[]
+        this.fp=fp
+      }
+      secondObjConstructor.prototype.newOtherData=function () {
+
+      };
+      secondObjConstructor.prototype.DeleteOtherData=function () {
+
+      };
+      secondObjConstructor.prototype.methodOnBothObjects=function () {
+        console.log("second object","methodOnBothObjects");
+      };
+    </script>
+    <script type="text/javascript" data-comment="uage of Fpool">
+    const myFussPool=new Fpool();
+
+    firstObj.fp=myFussPool;//to be able to send
+    myFussPool.add(firstObj);//to be able to receive
+
+    var secondObj=new secondObjConstructor(myFussPool);
+    myFussPool.add(secondObj);
+
+    </script>
+  </body>
+</html>
