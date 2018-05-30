@@ -35,6 +35,9 @@
       secondObjConstructor.prototype.methodOnBothObjects=function () {
         console.log("second object","methodOnBothObjects");
       };
+      secondObjConstructor.prototype.doSthg = function () {
+        this.fp.emit("methodOnBothObjects",{hey:'properties not used'})
+      };
     </script>
     <script type="text/javascript" data-comment="uage of Fpool">
     const myFussPool=new Fpool();
@@ -45,6 +48,7 @@
     var secondObj=new secondObjConstructor(myFussPool);
     myFussPool.add(secondObj);
 
+    secondObj.doSthg();
     </script>
   </body>
 </html>
